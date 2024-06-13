@@ -5,6 +5,7 @@ import FileUpload from './FileUpload';
 import ErrorScreen from './ErrorScreen';
 import DownloadButton from './DownloadButton';
 
+
 const MainScreen = () => {
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [uploadedFileUrl, setUploadedFileUrl] = useState('');
@@ -12,7 +13,7 @@ const MainScreen = () => {
 
   const handleUploadSuccess = (data) => {
     setUploadSuccess(true);
-    setUploadedFileUrl(`http://localhost:3001/uploads/${data.filename}`);
+    setUploadedFileUrl(`${import.meta.env.VITE_API_URL}/uploads/${data.filename}`);
     setError(null);
   };
 
@@ -37,3 +38,4 @@ const MainScreen = () => {
 };
 
 export default MainScreen;
+

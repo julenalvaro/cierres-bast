@@ -1,7 +1,7 @@
 // PATH: src/components/ErrorScreen.jsx
 
-import React from 'react';
 import { Typography, Button } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const ErrorScreen = ({ message }) => {
   return (
@@ -12,6 +12,11 @@ const ErrorScreen = ({ message }) => {
       </Button>
     </div>
   );
+};
+
+// Props validation
+ErrorScreen.propTypes = {
+  message: PropTypes.string.isRequired,
 };
 
 export default ErrorScreen;

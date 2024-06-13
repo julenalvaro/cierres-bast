@@ -1,6 +1,7 @@
 // PATH: src/components/DownloadButton.jsx
 
 import { Button } from '@mui/material';
+import PropTypes from 'prop-types';
 
 const DownloadButton = ({ fileUrl }) => {
   const handleDownload = () => {
@@ -12,6 +13,11 @@ const DownloadButton = ({ fileUrl }) => {
       Download
     </Button>
   );
+};
+
+// Props validation 
+DownloadButton.propTypes = {
+  fileUrl: PropTypes.string.isRequired,
 };
 
 export default DownloadButton;

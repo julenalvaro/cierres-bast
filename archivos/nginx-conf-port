@@ -1,0 +1,28 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen       700;
+        server_name  localhost;
+
+        location / {
+            root   "C:/Users/18287/OneDrive - Construcciones y Auxiliar deFerrocarriles SA (CAF)/projects/27-cierres-bast/dist";
+            index  index.html;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
